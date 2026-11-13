@@ -1,52 +1,305 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HM Seguros y Gestoría</title>
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="description" content="HM Servicios Profesionales. Estudio Jurídico, Gestoría Automotor, Seguros y Gestiones Administrativas.">
+  <title>HM Servicios Profesionales</title>
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --background: #f7f5f0;
+      --surface: #ffffff;
+      --primary: #263b39;
+      --text: #383a35;
+      --muted: #77766e;
+      --gold: #b49a70;
+      --line: #e8e3d9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    header {
+      padding: 25px 7%;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.75);
+    }
+
+    .brand {
+      color: var(--primary);
+      font-family: Georgia, serif;
+      font-size: 25px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .hero {
+      padding: 100px 20px 85px;
+      text-align: center;
+      background: linear-gradient(145deg, #f7f5f0, #eee9df);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 20px auto;
+      color: var(--primary);
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 6vw, 60px);
+      font-weight: normal;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .section {
+      padding: 75px 7%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      color: var(--primary);
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: normal;
+      margin: 10px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 30px 25px;
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .service h3 {
+      color: var(--primary);
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: normal;
+      margin: 15px 0 10px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .contact h2 {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: #e2e4df;
+      margin-bottom: 28px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 1px solid #bda77f;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .contact-links a:hover {
+      background: #ffffff;
+      color: var(--primary);
+    }
+
+    footer {
+      padding: 25px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 75px 20px;
+      }
+
+      .section {
+        padding: 55px 6%;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-links a {
+        width: 100%;
+        max-width: 340px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>HM Seguros y Gestoría</h1>
-  <p>Seguros, Gestoría del Automotor y Asesoramiento Profesional</p>
-</header>
+  <header>
+    <div class="brand">HM <span>Servicios Profesionales</span></div>
+  </header>
 
-<div class="container">
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Asesoramiento y gestión profesional</div>
+      <h1>Soluciones profesionales, atención personalizada.</h1>
+      <p>
+        Un espacio de servicios integrales orientado a brindar
+        asesoramiento, acompañamiento y soluciones en cada gestión.
+      </p>
+    </section>
 
-  <div class="grid">
+    <section class="section">
+      <div class="section-heading">
+        <div class="eyebrow">Nuestros servicios</div>
+        <h2>Áreas de trabajo</h2>
+        <p>Un equipo profesional para acompañarte en cada necesidad.</p>
+      </div>
 
-    <div class="card">
-      <h3>Contacto Hernán</h3>
-      <a class="btn" href="https://wa.me/5492634558289" target="_blank">WhatsApp</a>
-      <a class="email" href="mailto:aguerorhernanpas21@gmail.com">aguerorhernanpas21@gmail.com</a>
-    </div>
+      <div class="services">
 
-    <div class="card">
-      <h3>Contacto Melania</h3>
-      <a class="btn" href="https://wa.me/5492634573181" target="_blank">WhatsApp</a>
-      <a class="email" href="mailto:melaniaortiz39@gmail.com">melaniaortiz39@gmail.com</a>
-    </div>
+        <article class="service">
+          <div class="service-number">01 / JURÍDICO</div>
+          <h3>Estudio Jurídico</h3>
+          <p>
+            Asesoramiento y acompañamiento jurídico.
+            Atención profesional a cargo del estudio jurídico.
+          </p>
+        </article>
 
-  </div>
+        <article class="service">
+          <div class="service-number">02 / AUTOMOTOR</div>
+          <h3>Gestoría Automotor</h3>
+          <p>
+            Asesoramiento y gestión de trámites relacionados
+            con documentación y registración automotor.
+          </p>
+        </article>
 
-  <div class="card">
-    <h3>Solicitar cotización</h3>
-    <p>Completá el formulario y te contactamos.</p>
+        <article class="service">
+          <div class="service-number">03 / SEGUROS</div>
+          <h3>Seguros</h3>
+          <p>
+            Asesoramiento en seguros y gestión de solicitudes
+            de cotización y cobertura.
+          </p>
+        </article>
 
-    <a class="btn" href="https://forms.gle/tea6bpiDQgUr82UW9" target="_blank">
-      📝 Solicitar cotización
-    </a>
-  </div>
+        <article class="service">
+          <div class="service-number">04 / ADMINISTRATIVO</div>
+          <h3>Gestiones Administrativas y ANSES</h3>
+          <p>
+            Orientación y asistencia en trámites administrativos
+            y gestiones ante organismos públicos.
+          </p>
+        </article>
 
-</div>
+      </div>
+    </section>
 
-<footer>
-  © 2026 HM Seguros y Gestoría
-</footer>
+    <section class="contact">
+      <h2>Estamos para ayudarte</h2>
+      <p>Contactate con nuestro equipo para realizar tu consulta.</p>
+
+      <div class="contact-links">
+        <a href="mailto:aguerorhernan@gmail.com">
+          Hernán · aguerorhernan@gmail.com
+        </a>
+
+        <a href="mailto:legales.ortizasociados@gmail.com">
+          Estudio Jurídico · legales.ortizasociados@gmail.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 HM Servicios Profesionales. Todos los derechos reservados.</p>
+    <p><a href="privacy.html">Política de privacidad</a></p>
+  </footer>
 
 </body>
 </html>
